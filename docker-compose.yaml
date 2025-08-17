@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: iprologic-technologies
+    restart: always
+    env_file: .env
+    networks:
+      - hello-coock
+    # No ports exposed
+    # ports:
+    #   - "80:80" ← intentionally omitted
+
+networks:
+  hello-coock:
+    external: true
